@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: clone of a postgres application database for MC
+    # database: datasense_playground
+    schema: jaffle_shop
+    tables:
+      - name: customers
+        description: raw customer MC data
+        columns:
+          - name: id
+            description: primary key of customer source table
+            tests:
+              - unique
+              - not_null
+      - name: orders
+        description: raw order MC data
+        columns:
+          - name: id
+            tests:
+              - unique
+              - not_null
+
+
+      
